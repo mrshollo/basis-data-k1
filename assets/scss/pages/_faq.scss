@@ -1,0 +1,89 @@
+/*---------- faq style start ----------*/
+
+.faq-inner {
+    .accordion {
+        &-item {
+            border: none;
+            margin-bottom: 30px;
+            border-radius: 0;
+    
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        &-button {
+            color: $black-soft;
+            font-size: 16px;
+            font-weight: 500;
+            width: 100%;
+            line-height: 1.2;
+            padding: 16px 30px;
+            text-align: left;
+            text-transform: capitalize;
+            display: flex;
+            align-items: center;
+            background-color: $bg-gray;
+            position: relative;
+    
+            // responsive
+            @media #{$xxs-device} {
+                padding: 12px 10px;
+            }
+    
+            i {
+                color: $theme-color;
+                font-size: 20px;
+                padding-right: 10px;
+            }
+    
+            &:after {
+                top: 50%;
+                right: 20px;
+                content: "\f107";
+                position: absolute;
+                font-family: $font-awesome;
+                transform: translateY(-50%);
+                background-image: none;
+    
+                // responsive
+                @media #{$xxs-device} {
+                    right: 10px;
+                }
+            }
+            &[aria-expanded="false"] {
+                background-color: $bg-gray;
+                box-shadow: none;
+            }
+            &[aria-expanded="true"] {
+                color: $white;
+                background-color: $theme-color;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+            
+                i {
+                    color: $white;
+                }
+            
+                &:after {
+                    content: "\f106";
+                }
+            }
+    
+            &:hover {
+                background-color: $theme-color;
+                color: $white;
+            }
+            &:focus{
+                box-shadow: none;
+            }
+        }
+        &-collapse {
+            line-height: 1.8;
+            border: 1px solid $bdr-color;
+        }
+    }
+}
+
+
+
+/*---------- faq style end ----------*/
